@@ -6,7 +6,7 @@
 /*   By: dkhatri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 19:01:49 by dkhatri           #+#    #+#             */
-/*   Updated: 2019/02/14 14:43:45 by dkhatri          ###   ########.fr       */
+/*   Updated: 2019/02/20 15:28:31 by dkhatri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void			ft_scale_hook(t_mlx *ml, int up)
 	t_img		*img;
 
 	inc = 0.5 * (up ? 1 : -1);
-	if (!up && ml->scale->x <= 1)
+	if (!up && (ml->scale->x <= 1 || ml->scale->y <= 1 || ml->scale->z <= 1))
 		return ;
 	ml->scale->x = ml->scale->x + inc;
 	ml->scale->y = ml->scale->y + inc;
