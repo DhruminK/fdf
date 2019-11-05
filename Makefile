@@ -33,7 +33,7 @@ SRCO = $(addprefix $(SRCDIR), $(PARSOR:.c=.o)) \
 DEPS = ./includes/fdf.h ./includes/get_next_line.h
 
 %.o: %.c $(DEPS)
-	gcc $(FLAGS) -o $@ -c $<
+	gcc $(FLAGS) -I./minilibx_macos/ -o $@ -c $<
 
 all: $(NAME)
 
